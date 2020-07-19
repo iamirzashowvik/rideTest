@@ -31,7 +31,7 @@ class MyApp extends StatelessWidget {
         Locale('pt', ''),
         Locale('tr', ''),
       ],
-      home: LoadingScreen(),
+      home: Homepage(),
       routes: {
         'login': (context) => Login(),
         'signup': (context) => Signup(),

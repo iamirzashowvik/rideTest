@@ -13,6 +13,10 @@ class Homepage extends StatefulWidget {
 class _HomepageState extends State<Homepage> {
   LocationResult _pickedLocation1;
   LocationResult _pickedLocation2;
+  double lat1;
+  double lat2;
+  double lng1;
+  double lng2;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -43,13 +47,14 @@ class _HomepageState extends State<Homepage> {
 //                      resultCardAlignment: Alignment.bottomCenter,
               );
               print(' this is $result');
+              lat1 = _pickedLocation1.latLng.latitude;
+              lng1 = _pickedLocation1.latLng.longitude;
               setState(() => _pickedLocation1 = result);
             },
             child: Text('Choose Destination'),
           ),
           _pickedLocation1 != null
-              ? Text(
-                  "latitude: ${_pickedLocation1.latLng.latitude} & longitude: ${_pickedLocation1.latLng.longitude}")
+              ? Text('Your Destination: ${_pickedLocation1.address}')
               : Text("Loading"),
           RaisedButton(
             onPressed: () async {
@@ -64,11 +69,15 @@ class _HomepageState extends State<Homepage> {
 //                      resultCardAlignment: Alignment.bottomCenter,
               );
               print(' this is $result');
+              lat2 = _pickedLocation2.latLng.latitude;
+              lng2 = _pickedLocation2.latLng.longitude;
               setState(() => _pickedLocation2 = result);
             },
-            child: Text('Choose Current Position'),
+            child: Text('Choose Pickup'),
           ),
-          Text(_pickedLocation2.toString()),
+          _pickedLocation2 != null
+              ? Text('Your Pickup: ${_pickedLocation2.address}')
+              : Text("Loading"),
         ],
       ),
     );
