@@ -2,7 +2,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 import 'package:google_map_location_picker/google_map_location_picker.dart';
-
+import 'package:ansicolor/ansicolor.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 
 class Homepage extends StatefulWidget {
@@ -19,6 +19,7 @@ class _HomepageState extends State<Homepage> {
   double lng2;
   @override
   Widget build(BuildContext context) {
+    AnsiPen pen = new AnsiPen()..red(bold: true);
     return Scaffold(
       appBar: AppBar(
         title: Text('Ride Test'),
@@ -47,8 +48,9 @@ class _HomepageState extends State<Homepage> {
 //                      resultCardAlignment: Alignment.bottomCenter,
               );
               print(' this is $result');
-              lat1 = _pickedLocation1.latLng.latitude;
-              lng1 = _pickedLocation1.latLng.longitude;
+              print(pen(" this is $result"));
+              // lat1 = _pickedLocation1.latLng.latitude;
+              // lng1 = _pickedLocation1.latLng.longitude;
               setState(() => _pickedLocation1 = result);
             },
             child: Text('Choose Destination'),
