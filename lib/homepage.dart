@@ -47,10 +47,7 @@ class _HomepageState extends State<Homepage> {
                 layersButtonEnabled: true,
 //                      resultCardAlignment: Alignment.bottomCenter,
               );
-              print(' this is $result');
-              print(pen(" this is $result"));
-              // lat1 = _pickedLocation1.latLng.latitude;
-              // lng1 = _pickedLocation1.latLng.longitude;
+
               setState(() => _pickedLocation1 = result);
             },
             child: Text('Choose Destination'),
@@ -70,9 +67,7 @@ class _HomepageState extends State<Homepage> {
                 layersButtonEnabled: true,
 //                      resultCardAlignment: Alignment.bottomCenter,
               );
-              print(' this is $result');
-              lat2 = _pickedLocation2.latLng.latitude;
-              lng2 = _pickedLocation2.latLng.longitude;
+
               setState(() => _pickedLocation2 = result);
             },
             child: Text('Choose Pickup'),
