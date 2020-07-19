@@ -47,7 +47,10 @@ class _HomepageState extends State<Homepage> {
             },
             child: Text('Choose Destination'),
           ),
-          Text(_pickedLocation1.toString()),
+          _pickedLocation1 != null
+              ? Text(
+                  "latitude: ${_pickedLocation1.latLng.latitude} & longitude: ${_pickedLocation1.latLng.longitude}")
+              : Text("Loading"),
           RaisedButton(
             onPressed: () async {
               LocationResult result = await showLocationPicker(
