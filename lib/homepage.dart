@@ -40,8 +40,8 @@ class _HomepageState extends State<Homepage> {
               LocationResult result = await showLocationPicker(
                 context,
                 'AIzaSyCQ1aK9rg9URNvFWIe0wlZlko1C52uTexs',
-                initialCenter: LatLng(31.1975844, 29.9598339),
-//                      automaticallyAnimateToCurrentLocation: true,
+                initialCenter: LatLng(23.738315, 90.396044),
+                automaticallyAnimateToCurrentLocation: false,
 //                      mapStylePath: 'assets/mapStyle.json',
                 myLocationButtonEnabled: true,
                 layersButtonEnabled: true,
