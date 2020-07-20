@@ -5,7 +5,7 @@ import 'homepage.dart';
 import 'loading_screen.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'generated/i18n.dart';
-
+import 'package:flutter/services.dart';
 import 'package:google_map_location_picker/generated/i18n.dart'
     as location_picker;
 
@@ -17,6 +17,10 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
+    SystemChrome.setPreferredOrientations([
+      DeviceOrientation.portraitUp,
+      DeviceOrientation.portraitDown,
+    ]);
     return MaterialApp(
       localizationsDelegates: const [
         location_picker.S.delegate,
